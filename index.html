@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Given a video and a text prompt, Dreamix edits the video while maintaining fidelity to color, posture, object size and camera pose, resulting in a temporally consistent video.">
+    <meta property="og:title" content="Dreamix: Video Diffusion Models are General Video Editors" />
+    <meta property="og:description"
+        content="Given a video and a text prompt, Dreamix edits the video while maintaining fidelity to color, posture, object size and camera pose, resulting in a temporally consistent video." />
+    <meta property="og:url" content="https://dreamix-video-editing.github.io" />
+    <meta property="og:image" content="assets/static/image/og_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="Dreamix: Video Diffusion Models are General Video Editors">
+    <meta name="twitter:description"
+        content="Given a video and a text prompt, Dreamix edits the video while maintaining fidelity to color, posture, object size and camera pose, resulting in a temporally consistent video.">
+    <meta name="twitter:image" content="assets/static/images/twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="Video diffusion models, video editing, dreamix, dreambooth, imagen-video">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>NOVA-3D: Non-overlapped Views for 3D Anime Character Reconstruction
+    </title>
+    <link rel="icon" type="image/x-icon" href="assets/static/images/favicon.ico">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="assets/static/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="assets/static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="assets/static/css/fontawesome.all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+    <link rel="stylesheet" href="assets/static/css/index.css">
+
+    <script src="assets/static/js/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="assets/static/js/fontawesome.all.min.js"></script>
+    <script src="assets/static/js/bulma-carousel.min.js"></script>
+    <script src="assets/static/js/bulma-slider.min.js"></script>
+    <script src="assets/static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">NOVA-3D: Non-overlapped Views for 3D Anime Character
+                            Reconstruction</h1>
+
+                        <h1 style="font-size:1.5rem">Hongsheng Wang<sup>1,2</sup>, Nanjie Yao<sup>2</sup>,
+                            Xinrui Zhou<sup>2</sup>, Shengyu Zhang<sup>1</sup>,Huahao Xu<sup>†3</sup>, <br> Fei
+                            Wu<sup>1</sup> and Feng Lin<sup>2</sup><br></h1>
+                        <br>
+                        <span><sup>1</sup> Zhejiang University, China</span> &nbsp &nbsp &nbsp<span><sup>2</sup>
+                            Zhejiang Lab,
+                            China</span>&nbsp &nbsp &nbsp<span><sup>3</sup>
+                            Gameday Inc.,
+                            China</span><br>
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/NOVA-3D-Anime-Character-Synthesis/NOVA-3D"
+                                        target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <!-- Supplementary PDF link -->
+                                <span class="link-block">
+                                    <a href="https://www.alipan.com/s/FqiHyraNCZd" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-image"></i>
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+
+                            </div>
+                            <img src="assets/static/images/first page.png" alt="Your Image Description"
+                                style="width: 100%; height: auto;margin-top: 1%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            In the animation industry, 3D modelers typically rely on front and back non-overlapped
+                            concept designs to guide the 3D modeling of anime characters. However, there is currently a
+                            lack of automated approaches for generating anime characters directly from these 2D designs.
+                            In light of this, we explore a novel task of reconstructing anime characters from
+                            non-overlapped views. This presents two main challenges: existing multi-view approaches
+                            cannot be directly applied due to the absence of overlapping regions, and there is a
+                            scarcity of full-body anime character data and standard benchmarks. To bridge the gap, we
+                            present Non-Overlapped Views for 3D Anime Character
+                            Reconstruction (NOVA-3D), a new framework that implements a method for view-aware feature
+                            fusion to learn 3D-consistent features effectively and synthesizes full-body anime
+                            characters from non-overlapped front and back views directly. To facilitate this line of
+                            research, we collected the NOVA-Human dataset, which comprises multi-view images and
+                            accurate camera parameters for 3D anime characters. Extensive experiments demonstrate that
+                            the proposed method outperforms baseline approaches, achieving superior reconstruction of
+                            anime characters with exceptional detail fidelity. In addition, to further verify the
+                            effectiveness of our method, we applied it to the animation head reconstruction task and
+                            improved the state-of-the-art baseline to 94.453 in SSIM, 7.726 in LPIPS, and 19.575 in PSNR
+                            on average.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <div class="content">
+                        <h2 class="title is-3">Pipeline</h2>
+                        <center>
+                            <img src="assets/static/images/pipeline.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                The overall pipeline of NOVA-3D. NOVA-3D utilizes front and rear viewpoint images as
+                                input. The dual-viewpoint encoder extracts features from the images, which are then used
+                                by the generator to produce two tri-planes. The tri-planes are sampled to obtain
+                                sampling features, and the direction-aware attention module is employed to fuse the
+                                features. Finally, the reconstruction loss and GAN loss modules are used to calculate
+                                the overall loss.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="border-bottom:3px solid #CCC"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <h2 class="title is-3">Results</h2>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/head1.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/head2.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%;margin-bottom: 2%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                360-degree displays of the head of 3D anime character model.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/1.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/3.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/2.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/4.gif" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%;margin-bottom: 2%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                360-degree displays of the full-body of 3D anime character model.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/3a.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 42%; float: left;" />
+                            <img src="assets/static/images/3b.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 55.5%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                <strong>Left:</strong> Some examples of front and back images, where the front image
+                                contains more
+                                high-frequency information and the back image contains more low-frequency information.
+                                <strong>Right:</strong> Directly concatenating the features of the front and back view
+                                will lead to ghost face in the back view.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/4a.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/4b.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%;margin-bottom: 2%;" />
+                            <img src="assets/static/images/resultshuanghy.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                3D reconstruction visualization.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/6a.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%; float: left;" />
+                            <img src="assets/static/images/6b.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 50%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                <strong>Left:</strong> NOVA-3D can generate novel views with richer details that are
+                                closer to the appearance of real characters. <strong>Right:</strong> NOVA-3D eliminates
+                                the symmetrical ghosting phenomenon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div style="border-bottom:3px solid #CCC"></div>
+        </div>
+    </section>
+
+    <!-- Dataset -->
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <h2 class="title is-3">Datasets</h2>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/ACG.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here are some anime characters from various works in the ACG (Anime, Comic and Game)
+                                field showcased in the NOVA-Human dataset. It includes well-known characters in the ACG
+                                community such as Hatsune Miku, Uzumaki Naruto, Kiana, Ram, Megumin, and Kamado Nezuko.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content" style="margin-top: 4%;">
+                        <center>
+                            <img src="assets/static/images/dataset_1.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%; " />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here we present the training data sampled from a 3D anime character model in NOVA-Human.
+                                On the left are 16 randomly sampled views, while on the right are four fixed orthogonal
+                                sampled views.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/Future.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here are the anime characters with a futuristic or near-futuristic Cyberpunk style
+                                showcased in the NOVA-Human dataset.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/gete.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here are the anime characters with a Gothic style showcased in the NOVA-Human dataset.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/dark.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here are the anime characters with a Dark Horror style showcased in the NOVA-Human
+                                dataset.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/zhongzu.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>Here are the anime characters with different body types and races showcased in the
+                                NOVA-Human dataset, including Beast ear Niang, Elf, Demons, Robots, and more.</p>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/xiaozhong.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>Here are anime characters with niche styles showcased in the NOVA-Human dataset,
+                                including various unique and unconventional characters.</p>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                        <center>
+                            <img src="assets/static/images/moredata.png" alt="Mixed Video-Image Finetuning"
+                                class="center-image blend-img-background" style="width: 100%;" />
+                        </center>
+                        <div class="level-set has-text-justified">
+                            <p>
+                                Here we showcase additional sampled views from the NOVA-Human dataset. Our dataset
+                                encompasses a diverse range of 3D anime characters.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a>.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer. <br> This website is licensed under a <a rel="license"
+                                href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- Default Statcounter code for Dreamix
+https://dreamix-video-editing.github.io -->
+    <script type="text/javascript">
+        var sc_project = 12843789;
+        var sc_invisible = 1;
+        var sc_security = "e9c3bf5f"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
+                    class="statcounter" src="https://c.statcounter.com/12843789/0/e9c3bf5f/1/" alt="Web Analytics"
+                    referrerPolicy="no-referrer-when-downgrade"></a></div>
+    </noscript>
+
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
